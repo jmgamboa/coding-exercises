@@ -1,4 +1,5 @@
-
+# navigate from a matrix of N by N from left to right and find the sum
+# navigate from right to left and find the sum
 
 
 matrix = [[0]*3 for i in range(3)]
