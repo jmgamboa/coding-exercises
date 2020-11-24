@@ -19,9 +19,15 @@ def shift_left_brute(lst, n):
 	print(result)
 
 
+
+
 def shift_left(lst, n):
-	n = n % len(lst)
-	return lst[-n:] + lst[:-n]
+    a = list(a)
+    i = d % n
+    b = a[i:]
+    b += (a[:i])
+    a = b
+    return a
 
 shift_left_brute(a, 3)
 
