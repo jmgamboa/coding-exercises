@@ -42,7 +42,6 @@ Function Description"""
 w, h = 6, 6;
 matrix = [[0 for x in range(w)] for y in range(h)]
 
-# not matrix[0][x] all
 matrix[1][1] = 2
 matrix[1][2] = 5
 matrix[1][3] = 7
@@ -63,8 +62,9 @@ matrix[4][2] = 0
 matrix[4][3] = 0
 matrix[4][4] = 0
 
-# not matrix[5][x] all
 
+# not matrix[0][x] all
+# not matrix[5][x] all
 
 # not matrix[0][0]
 # not matrix[1][0]
@@ -96,7 +96,6 @@ def calculateHourGlass(matrix, i, j):
 hourglasstotal = -90
 
 for i in range(1,5):
-
 	for j in range(1, 5):
 
 		currTotal = calculateHourGlass(matrix, i, j)

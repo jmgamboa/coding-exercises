@@ -9,7 +9,7 @@
 # 3   [1, 2, 3, 4, 7, 5, 6]   swap (4,5)
 # 4   [1, 2, 3, 4, 5, 7, 6]   swap (5,6)
 # 5   [1, 2, 3, 4, 5, 6, 7]
-# It took  swaps to sort the array.
+# It took n swaps to sort the array.
 
 # Function Description
 

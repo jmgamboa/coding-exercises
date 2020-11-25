@@ -30,20 +30,20 @@ n = 10
 # e o 7
 
 def repeatedString(s, n):
-	if len(s) == 1 and s == 'a':
-		return n
+    if len(s) == 1 and s == 'a':
+        return n
 
-	repeat_string = s
-	while len(repeat_string) < n:
-		repeat_string += repeat_string
+    repeat_string = s
+    while len(repeat_string) < n:
+        repeat_string += repeat_string
 
-	count = 0
-	for i in repeat_string[0:n]:
-		if i == 'a':
-			count += 1
+    count = 0
+    for i in repeat_string[0:n]:
+        if i == 'a':
+            count += 1
 
 
-	return count
+    return count
 
 
 print(repeatedString(s, n))
