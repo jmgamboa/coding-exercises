@@ -63,11 +63,22 @@ r2 = 3
 
 # Complete the countTriplets function below.
 def countTriplets(arr, r):
-	total_trips = 0
+	trips = 0
+	for idx, v in enumerate(arr[0: len(arr)-1]):
+		if idx == 0:
+			continue
 
-	for idx, val in enumerate(arr):
-		print(val)
+		prev_ratio = v / r
+		next_ratio = v * r
+
+		before_slice = arr[0:idx]
+		after_slice = arr[idx:len(arr)]
+
+		if prev_ratio in arr[0:idx] and \
+			next_ratio in arr[idx:len(arr)]:
+			trips += 1
+	return trips
 
 
-# import pdb; pdb.set_trace()
-print(countTriplets(a1, r1))
+
+print(countTriplets(a2, r2))
