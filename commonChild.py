@@ -8,7 +8,7 @@ def commonChild(s1, s2):
 
     prev = [0] * (len(s2)+1)
     curr = [0] * (len(s2)+1)
-    import pdb; pdb.set_trace()
+
     for r in s1:
         for j, c in enumerate(s2, 1):
             curr[j] = prev[j-1] + 1 if r == c else max(prev[j], curr[j-1])
