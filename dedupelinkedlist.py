@@ -8,15 +8,13 @@ class ListNode:
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
 
-        prev_val = head.val
-        prev_node = head
-        while head.next:
-            if prev_val == head.val:
-                prev_node.next = head.next
-
-            prev_node = head
-            head = head.next
-            prev_val = head.val
+        curr_node = head
+        while curr_node.next:
+            if curr_node.val == curr_node.next.val:
+                curr_node.next = curr_node.next.next
+            else:
+                curr_node = curr_node.next
+        import pdb; pdb.set_trace()
         return head
 
 

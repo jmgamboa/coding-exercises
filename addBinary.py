@@ -3,35 +3,33 @@
 
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        a_prefix = 4 - len(a)
-        b_prefix = 4 - len(b)
-        if a_prefix:
-            a = (a_prefix * "0") + a
-        if b_prefix:
-            b = (b_prefix * "0") + b
-
-
-        final = ""
+        length = min(len(a),len(b))
+        res = ''
         carry = 0
-        rev_a = reversed(a)
-        rev_b = reversed(b)
-        for i, j in zip(rev_a, rev_b):
-            val = int(i) + int(j) + carry
-            if val == 3:
-                final += "1"
+        for i in range(1,length+1):
+            if int(a[-i]) + int(b[-i]) + carry > 1:
+                res = str(int(a[-i]) + int(b[-i]) + carry - 2) + res
                 carry = 1
-            if val == 2:
-                final += "0"
+            else:
+                res = str(int(a[-i]) + int(b[-i]) + carry) + res
                 carry = 0
-            elif val == 1:
-                final += "1"
+        if len(a) > len(b):
+            rest = a[:(len(a)-length)]
+        elif len(a) < len(b):
+            rest = b[:(len(b)-length)]
+        else:
+            rest = ""
+        for i in range(1,len(rest)+1):
+            if int(rest[-i]) + carry > 1:
+                res = str(int(rest[-i]) + carry - 2) + res
+                carry = 1
+            else:
+                res = str(int(rest[-i]) + carry ) + res
                 carry = 0
-            elif val == 0:
-                final += "0"
-                carry = 0
-
-        print(final)
-
+        if carry == 0:
+            return res
+        else:
+            return "1"+res
 
 
 a = "11"
