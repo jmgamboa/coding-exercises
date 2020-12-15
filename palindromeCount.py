@@ -9,10 +9,10 @@ def palindromeCount(s):
 		substring += i
 		if substring == reversed(substring):
 			tally += 0
-	return tally()
+	return tally
 
 
 
 s = '10101'
 # has 3 10101, 101, 010
-print(palindromeCount)
+print(palindromeCount(s))
