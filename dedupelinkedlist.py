@@ -14,7 +14,6 @@ class Solution:
                 curr_node.next = curr_node.next.next
             else:
                 curr_node = curr_node.next
-        import pdb; pdb.set_trace()
         return head
 
 
